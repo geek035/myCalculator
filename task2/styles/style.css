@@ -1,0 +1,251 @@
+*,
+::after,
+::before {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+:root {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(92, 94, 95);
+    
+    --font-size: 0.5em + 0.5vw;
+    font-size: var(--font-size);
+    color: white;
+}
+
+ul {
+    list-style: none;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: calc(var(--font-size) * 2);
+
+    width: 100%;
+    height: 5vh;
+
+    background-color: rgb(65, 66, 67);
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 5vh;
+
+    background-color: rgb(65, 66, 67);
+}
+
+main {
+    width: 100%;
+    height: 90vh;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+
+    align-items: center;
+}
+
+.text-box-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 90vh;
+
+}
+
+.text-box-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    text-align: center;
+    padding: 0 0.5em 0 0.5em;
+
+    width: 80%;
+    height: 50%;
+
+    background-color: rgb(79, 77, 77);
+}
+
+.text-box-content ul {
+    list-style: circle;
+    flex-direction: column;
+
+}
+
+.text-box-content .p-expr {
+    padding: 1em 0 1em 0;
+}
+
+.text-box-content .p-result {
+    padding: 1em 0 1em 0;
+}
+
+.calculator-wrapper {
+    grid-column: 2;
+
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 60%;
+
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 6fr;
+}
+
+.pop-up-block {
+    grid-column: 1;
+    grid-row-start: 1;
+    grid-row-end: 7;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: -1;
+}
+
+@keyframes popUpPromt {
+    from {
+        background-color: rgba(72, 145, 168, 0);
+    } to {
+        background-color: rgba(72, 145, 168, 0.7);
+    }
+}
+
+@keyframes hidePromt {
+    from {
+        background-color: rgba(72, 145, 168, 0.7);
+    } to {
+        background-color: rgba(72, 145, 168, 0);
+    }
+}
+
+.pop-up-block-text {
+    background-color: rgba(72, 145, 168, 0);
+    width: 100%;
+    height: 100%;
+
+    animation-iteration-count: 1;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    position: relative;
+    z-index: auto;
+}
+
+
+.calculator-input {
+    grid-column: 2;
+    width: 100%;
+    height: 100%;
+}
+
+.calculator-input input {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(161, 160, 160);
+
+    color: white;
+
+    border: black 1px solid;
+}
+
+.calculator-buttoms {
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    width: 100%;
+    height: 100%;
+}
+
+.calculator-buttoms input{
+    width: 100%;
+    height: 100%;
+
+    border: black 0.1em solid
+}
+
+.calculator-instruments {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row: 1;
+}
+
+.calculator-instruments ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    width: 100%;
+    height: 100%;
+}
+
+.calculator-expressions {
+    grid-row: 2;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.calculator-expressions ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    width: 100%;
+    height: 100%
+}
+
+.calculator-figures {
+    grid-row-start: 3;
+    grid-row-end: 7;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.calculator-figures ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+
+    width: 100%;
+    height: 100%;
+}
+
+.calculator-operations {
+    grid-row-start: 2;
+    grid-row-end: 7;
+    grid-column: 4;
+}
+
+.calculator-operations ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+
+    width: 100%;
+    height: 100%;
+}

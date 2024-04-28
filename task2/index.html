@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="styles/style.css" rel="stylesheet" type="text/css" />
+    <script src="scripts/script.js" defer></script>
+    <title>Calculator</title>
+</head>
+
+<body>
+    <header>
+        <p>КАЛЬКУЛЯТОР</p>
+    </header>
+
+    <main>
+        <div class="text-box-wrapper">
+            <article class="text-box-content">
+                <h3>Описание калькулятора</h3>
+                <p>Калькулятор арифметических выражений. Доступные операции: </p>
+                <ul>
+                    <li>Сложение</li>
+                    <li>Вычитание</li>
+                    <li>Умножение</li>
+                    <li>Деление</li>
+                </ul>
+                <p>Поддерживается ввод с клавиатуры, сочетание клавиш копирования, вывод результата клавишей
+                    <code>Enter</code>, скобочные выражения и числа с плавающей запятой.</p>
+            </article>
+        </div>
+
+        <div class="calculator-wrapper">
+            
+            <div class="pop-up-block">
+                <div class="pop-up-block-text">
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="calculator-input">
+                <input type="text" id="input-expr">
+            </div>
+
+            <div class="calculator-buttoms">
+                <div class="calculator-instruments">
+                    <ul>
+                        <li><input type="button" value="MS"></li>
+                        <li><input type="button" value=""></li>
+                        <li><input type="button" value="C"></li>
+                        <li><input type="button" value="&#9003;"></li>
+                    </ul>
+                </div>
+                <div class="calculator-expressions">
+                    <ul>
+                        <li><input type="button" value=""></li>
+                        <li><input type="button" value="("></li>
+                        <li><input type="button" value=")"></li>
+                    </ul>
+                </div>
+                <div class="calculator-figures">
+                    <ul>
+                        <li><input type="button" value="7"></li>
+                        <li><input type="button" value="8"></li>
+                        <li><input type="button" value="9"></li>
+                        <li><input type="button" value="4"></li>
+                        <li><input type="button" value="5"></li>
+                        <li><input type="button" value="6"></li>
+                        <li><input type="button" value="1"></li>
+                        <li><input type="button" value="2"></li>
+                        <li><input type="button" value="3"></li>
+                        <li><input type="button" value="&#177;"></li>
+                        <li><input type="button" value="0"></li>
+                        <li><input type="button" value="."></li>
+                    </ul>
+                </div>
+                <div class="calculator-operations">
+                    <ul>
+                        <li><input type="button" value="+"></li>
+                        <li><input type="button" value="-"></li>
+                        <li><input type="button" value="*"></li>
+                        <li><input type="button" value="&divide;"></li>
+                        <li><input type="button" value="="></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-box-wrapper">
+            <article class="text-box-content">
+                <h3>Полученное выражение:</h3>
+                <p class="p-expr">...</p>
+                <h3>Результат</h3>
+                <p class="p-result">...</p>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy pudra - &ltgeek coding&gt</p>
+    </footer>
+
+</body>
+
+</html>
