@@ -15,7 +15,6 @@ document.addEventListener('keydown', event => {
 });
 
 document.querySelector(".calculator-buttoms").addEventListener('click', event => {
-    console.log(event.target.value);
     inputChar(event.target.value);
 });
 
@@ -34,7 +33,6 @@ inputField.addEventListener('keydown', event => {
 var showPrompt = function(text) {
     let popUpBlock = document.querySelector('.pop-up-block-text')
 
-    console.log(popUpBlock.firstChild);
     popUpBlock.firstChild.textContent = text;
     popUpBlock.style.cssText = `animation-name: popUpPromt;`;
     setTimeout(() => {popUpBlock.style.cssText = `animation-name: hidePromt;`;
@@ -54,7 +52,8 @@ var inputChar = function(value) {
             inputField.value = inputField.value.slice(0, -1);
         break;
         case '±':
-            if (inputField.value != "" && inputField.value.match(/[0-9]$/)) {
+            if (inputField.value != "" && inputField.value.match(/[0-9]$/) &&
+                    !(/[-+*/()\s÷]*0$/.test(inputField.value))) {
                 let lastDigit = inputField.value.search(/[-+*/()\s÷]([0-9.]+)$/);
                 if (inputField.value[lastDigit] == '-' && (/[-+*/()\s÷]/.test(inputField.value[lastDigit-1]) || 
                         lastDigit == 0)) {
@@ -214,7 +213,8 @@ var confrirmAndValidate = function(expr) {
         /^\s*[+*/÷].*/.test(expr) || /[+*/÷.-](\s*)$/.test(expr) ||
         /.*[0-9]\s+[0-9].*/.test(expr) ||
         /.*[0-9]+\.[0-9]+\.[0-9]+.*/.test(expr) ||
-        /.*[0-9]\s*\(/.test(expr) || /.*\)\s*[0-9].*/.test(expr)) {
+        /.*[0-9]\s*\(/.test(expr) || /.*\)\s*[0-9].*/.test(expr) ||
+        /.*0[0-9]+.*/.test(expr)) {
             return false;
     }
 
@@ -228,7 +228,7 @@ var confrirmAndValidate = function(expr) {
 var transformExpr = function(expr) {
     result = ""
     for (let i = 0; i < expr.length; i++) {
-        if (/-\d/.test(expr[i] + expr[i+1])) {
+        if (/[+*/÷()-]-\d/.test(expr[i-1] + expr[i] + expr[i+1])) {
             result += expr[i] + expr[i+1];
             i++;
         } else if (/[+*/÷()-]/.test(expr[i])) {

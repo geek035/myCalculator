@@ -1,0 +1,145 @@
+*,
+::after,
+::before {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+:root { 
+    box-sizing: border-box;
+
+    --text-size: 0.5em + 0.5vh;
+    font-size: var(--text-size);
+    color: rgb(121, 13, 6);
+}
+
+body {
+    background-color: rgb(223, 191, 235);
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+
+    align-items: center;
+    
+    width: 100%;
+    height: 100vh;
+}
+
+input {
+    margin-top: 0.5em;
+    background-color: rgb(149, 233, 250);
+    text-align: center;
+}
+
+.input {
+    position: absolute;
+
+    width: 30%;
+    height: 50%;
+}
+
+.text-form-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+
+    grid-column: 2;
+
+    background-color: rgba(131, 226, 250, 0.8);
+    border-radius: 15px;
+}
+
+.text-form-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background-color: rgba(73, 178, 205, 0.8);
+    width: 90%;
+    height: 90%;
+
+    border-radius: 10px;
+}
+
+.text-form-box ul {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    list-style: none;
+}
+
+.text-form-box li {
+    display: flex;
+    flex-direction: column;
+
+    padding: 0.1em 0 0.1em 0;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+}
+
+.text-form-box input {
+    width: 25%;
+}
+
+.text-form-box li input{
+    margin-top: 0.2em;
+
+    border: 2px solid black;
+    border-top: 0px;
+
+    color: white;
+    text-align: center;
+    background-color: rgb(69, 145, 151);
+    width: 100%;
+}
+
+#popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+   
+#popup {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.progress {
+    display: none;
+    position: absolute;
+
+    width: 30%;
+    height: 50%;
+}
+
+#return-button {
+    display: none;
+}
+
+.options {
+    grid-column: 1;
+}

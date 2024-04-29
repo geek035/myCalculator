@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="script.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <main>
+
+        <article class="text-form-wrapper options">
+            <div class="text-form-box">
+                <h3>Настройки эмуляции</h3>
+                <ul>
+                    <li><p>Интервалы между действиями (секунды)</p><input name = "interval" value="2" type="text"></li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="text-form-wrapper input">
+            <div class="text-form-box">
+                <h3>Заполните форму</h3>
+                <ul>
+                    <li><p>Количество котиков: </p><input name = "n" type="text"></li>
+                    <li><p>Количество корма, чтобы наесться котику: </p><input name="b" type="text"></li>
+                    <li><p>Вместимость миски: </p><input name="m" type="text"></li>
+                    <li><p>Время, чтобы наесться котику: </p><input name="t" type="text"></li>
+                    <li><p>Время sпополнения миски бабушкой: </p><input name="r" type="text"></li>
+                </ul>
+                <input id="confirm-button" type="button" value="ЗАПУСТИТЬ">
+            </div>
+        </article>
+
+        <article class="text-form-wrapper progress">
+            <div class="text-form-box">
+                <h3 style="text-transform: uppercase;">Бабушка и котики</h3>
+                <p class="progress-form-data"></p>
+                <p class="progress-form-timer"></p>
+                <input id="return-button" type="button" value="ВЕРНУТЬСЯ" />
+            </div>
+        </article>
+    </main>
+
+    <div id="popup-overlay">
+        <div id="popup">
+            <p></p>
+        </div>
+      </div>
+</body>
+</html>
